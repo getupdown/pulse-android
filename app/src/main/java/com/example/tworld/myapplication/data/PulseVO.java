@@ -37,6 +37,10 @@ public class PulseVO implements Parcelable {
         this.signal = signal;
     }
 
+    public PulseVO() {
+
+    }
+
     protected PulseVO(Parcel in) {
         this.bpm = in.readInt();
         this.signal = in.readInt();
