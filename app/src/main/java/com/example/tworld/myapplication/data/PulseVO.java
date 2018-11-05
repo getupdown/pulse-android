@@ -37,6 +37,24 @@ public class PulseVO implements Parcelable {
         this.signal = signal;
     }
 
+    protected PulseVO(Parcel in) {
+        this.bpm = in.readInt();
+        this.signal = in.readInt();
+    }
+
+    public static final Creator<PulseVO> CREATOR = new Creator<PulseVO>() {
+        @Override
+        public PulseVO createFromParcel(Parcel in) {
+            return new PulseVO(in);
+        }
+
+        @Override
+        public PulseVO[] newArray(int size) {
+            return new PulseVO[size];
+        }
+    };
+
+
     @Override
     public String toString() {
         return "PulseVO{" +
