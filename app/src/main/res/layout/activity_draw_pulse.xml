@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DrawPulseActivity">
+
+    <!--<com.example.tworld.myapplication.view.WH_ECGView-->
+        <!--android:id="@+id/pulse"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginStart="0dp"-->
+        <!--android:layout_marginTop="0dp" />-->
+
+    <com.example.tworld.myapplication.view.CardiographView
+        android:id="@+id/pulse"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp" />
+
+
+    <com.example.tworld.myapplication.view.PathView
+        android:id="@+id/pathView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginBottom="475dp"
+        android:text="BPM"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="474dp"
+        android:text="脉搏类型"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="111dp"
+        android:layout_marginLeft="111dp"
+        android:layout_marginBottom="-10dp"
+        android:text="0"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="62dp"
+        android:layout_height="57dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-104dp"
+        android:layout_marginLeft="-104dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginRight="139dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:layout_toRightOf="@+id/textView4"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/bt_draw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="36dp"
+        android:text="采集" />
+
+    <Button
+        android:id="@+id/bt_savedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/bt_draw"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:text="保存数据" />
+
+    <TextView
+        android:id="@+id/incomingmessages"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="57dp"
+        android:text="hello"
+        android:textColor="@color/red" />
+
+
+</RelativeLayout>
