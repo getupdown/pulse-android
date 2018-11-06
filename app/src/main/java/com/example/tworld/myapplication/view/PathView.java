@@ -83,7 +83,7 @@ public class PathView extends CardiographView {
             if (!yq.isEmpty()) {
                 Integer y = yq.poll();
                 assert y != null;
-                mPath.lineTo(baseX, baseY - (y - 300));
+                mPath.lineTo(baseX, baseY - (y - 512));
             } else {
                 mPath.lineTo(baseX, baseY);
             }
