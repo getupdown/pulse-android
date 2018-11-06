@@ -36,6 +36,21 @@ public class BluetoothDecoder {
 
         Log.d(TAG, "the tmp is " + tmp);
 
+        // 判断新组装的字符串是否是以R开头的, 如果不是, 向下遍历, 直到找到第一个R为止, 前面全部删除
+        int firstRIndex = tmp.indexOf("R");
+
+        // 如果没有找到R开头的, 有可能是因为后面的有效数据还没进入, 所以跳过, 等待下一个数据进来
+        if (firstRIndex == -1) {
+            remain = new StringBuilder(tmp);
+            return new ArrayList<>();
+        } else {
+            // 如果找到R了, 那么把这个R前面所有的东西都去掉, 因为那些都是无效数据
+            String newStr = remain.toString().substring(0, firstRIndex);
+            stringBuilder = new StringBuilder(newStr);
+
+            Log.d("TAG", "new string is " + newStr);
+        }
+
         // 根据分隔符分割, 然后构造对象
         String[] rawPulses = tmp.split(SEP);
 
@@ -62,7 +77,7 @@ public class BluetoothDecoder {
 
             int lastRemainIndex = 0;
 
-            for (int i = 0; i < rawPulses.length - 1; i ++) {
+            for (int i = 0; i < rawPulses.length - 1; i++) {
                 // 构造pulseVO
                 PulseVO pulseVO = PulseVOFactory.createPulseVO(rawPulses[i]);
 
