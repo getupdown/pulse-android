@@ -46,7 +46,7 @@ public class BluetoothDecoder {
             return new ArrayList<>();
         } else {
             // 如果找到R了, 那么把这个R前面所有的东西都去掉, 因为那些都是无效数据
-            String newStr = tmp.substring(0, firstRIndex);
+            String newStr = tmp.substring(firstRIndex, tmp.length());
             stringBuilder = new StringBuilder(newStr);
 
             Log.d("TAG", "new string is " + newStr);
